@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D8267E56-B708-7A13-A20E-08E304C641CA" name="miembros">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:32:21 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="run" id="C7DBFCC9-8EE3-9FF3-0804-0F962B3A9FDF">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:32:33 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="run_verificador" id="285BE969-0EBC-0201-F66A-84EFB37ED68D">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:32:34 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="96F3632C-4892-4BDF-8889-21DA2833D845">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:32:43 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellidos" id="8A6C90FA-99AF-A6C4-3CB3-398A4FFA2084">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:32:43 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="451EF69D-787B-70EE-88A8-36A03B7FC449">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:32:51 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fcha_altafund" id="2E4334FE-C6E5-1756-28BF-FD71C6915B51">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:41:07 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1AEBBDEA-F683-B10C-7C03-5FE696C41E06" name="miembros PK">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:33:27 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C7DBFCC9-8EE3-9FF3-0804-0F962B3A9FDF</attributeRef>
+<attributeRef>285BE969-0EBC-0201-F66A-84EFB37ED68D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
