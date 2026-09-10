@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonido Vivo - Tienda de Instrumentos Musicales</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <h1>Sonido Vivo</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="login.html">Iniciar sesión</a> | 
+            <a href="registro.html">Registrar usuario</a>
+            <a href="carrito.html" class="cart-btn"> Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2>TIENDA ONLINE SONIDO VIVO</h2>
+                <p>Especialistas en guitarras, bajos, baterías y equipamiento de audio profesional en Viña del Mar.</p>
+                <a href="productos.html" class="btn-primary">Ver productos</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/img/hero-banner.jpg" alt="Instrumentos Musicales Sonido Vivo">
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h3>Productos Destacados</h3>
+            <div class="product-grid" id="featured-products-container">
+                <!-- Se renderiza dinámicamente desde JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-info">
+            <p>&copy; 2026 Sonido Vivo. Viña del Mar, Chile.</p>
+            <p>Categorías: Guitarras | Amplificadores | Teclados | Baterías</p>
+        </div>
+        <div class="newsletter-form">
+            <label for="newsletter-email">Suscríbete al boletín:</label>
+            <input type="email" id="newsletter-email" placeholder="Enter Email">
+            <button type="button">Subscribe</button>
+        </div>
+    </footer>
+
+    <script src="js/carrito.js"></script>
+</body>
+</html>
