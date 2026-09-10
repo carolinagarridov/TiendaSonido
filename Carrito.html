@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Sonido Vivo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Sonido Vivo</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Mi Carrito de Compras</h2>
+        <div id="carrito-lista" style="margin-top: 20px;"></div>
+        <h3 id="carrito-total" style="margin-top: 20px;">Total: $0</h3>
+        <button class="btn-primary" onclick="vaciarCarrito()" style="background:#dc3545;">Vaciar Carrito</button>
+    </main>
+
+    <script src="JSTienda.js"></script>
+    <script>
+        function renderizarCarrito() {
+            const lista = document.getElementById("carrito-lista");
+            const totalEl = document.getElementById("carrito-total");
+            const carrito = obtenerCarrito();
+            
+            lista.innerHTML = "";
+            let total = 0;
+
+            if (carrito.length === 0) {
+                lista.innerHTML = "<p>El carrito está vacío.</p>";
+                totalEl.innerText = "Total: $0";
+                return;
+            }
+
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                lista.innerHTML += `
+                    <div style="background:#fff; padding:10px; border:1px solid #ccc; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                            <h4>${item.nombre}</h4>
+                            <p>Precio: $${item.precio.toLocaleString('es-CL')} | Cantidad: ${item.cantidad}</p>
+                        </div>
+                        <p><strong>Subtotal: $${subtotal.toLocaleString('es-CL')}</strong></p>
+                    </div>
+                `;
+            });
+
+            totalEl.innerText = `Total: $${total.toLocaleString('es-CL')}`;
+        }
+
+        function vaciarCarrito() {
+            localStorage.removeItem("carrito");
+            actualizarContadorCarrito();
+            renderizarCarrito();
+        }
+
+        document.addEventListener("DOMContentLoaded", renderizarCarrito);
+        
+    </script>
+</body>
+</html>

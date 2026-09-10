@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sonido Vivo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Sonido Vivo</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Registro de Usuario</h2>
+            <form id="form-registro" onsubmit="validarRegistro(event)">
+                <div class="form-group">
+                    <label for="run">RUN (Sin puntos ni guión):</label>
+                    <input type="text" id="run" placeholder="Ej: 19011022K" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" maxlength="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" placeholder="ejemplo@duoc.cl" required>
+                </div>
+                <div class="form-group">
+                    <label for="clave">Contraseña (4 a 10 caracteres):</label>
+                    <input type="password" id="clave" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmarClave">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmarClave" required>
+                </div>
+                <div class="form-group">
+                    <label for="region">Región:</label>
+                    <select id="region" required>
+                        <option value="">-- Seleccione Región --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comuna">Comuna:</label>
+                    <select id="comuna" required>
+                        <option value="">-- Seleccione Comuna --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" maxlength="300" required>
+                </div>
+                <button type="submit" class="btn-primary">Registrar</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="JSTienda.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            inicializarRegionesYComunas("region", "comuna");
+        });
+    </script>
+</body>
+</html>
