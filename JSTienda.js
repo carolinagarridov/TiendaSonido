@@ -3,105 +3,107 @@
 // ==========================================
 const baseDatosRegiones = [
     {
-        id: 1,
         region: "Región de Valparaíso",
         comunas: ["Valparaíso", "Viña del Mar", "Quilpué", "Villa Alemana", "Concón", "San Antonio"]
     },
     {
-        id: 2,
         region: "Región Metropolitana de Santiago",
         comunas: ["Santiago", "Providencia", "Las Condes", "Ñuñoa", "Maipú", "La Florida", "Puente Alto"]
     },
     {
-        id: 3,
         region: "Región del Biobío",
         comunas: ["Concepción", "Talcahuano", "San Pedro de la Paz", "Chiguayante", "Los Ángeles"]
-    },
-    {
-        id: 4,
-        region: "Región de La Araucanía",
-        comunas: ["Temuco", "Padre Las Casas", "Villarrica", "Pucón"]
-    },
-    {
-        id: 5,
-        region: "Región de Los Lagos",
-        comunas: ["Puerto Montt", "Puerto Varas", "Osorno", "Castro"]
     }
 ];
 
 // ==========================================
-// 2. BASE DE DATOS DE PRODUCTOS
+// 2. BASE DE DATOS OFICIAL DE PRODUCTOS (IMAGEN)
 // ==========================================
 const baseDatosProductos = [
-    {
-        codigo: "PROD01",
-        nombre: "Guitarra Eléctrica Fender Stratocaster",
-        categoria: "Guitarras",
-        precio: 650000,
-        stock: 5,
-        descripcion: "Guitarra eléctrica de alta calidad, acabado Gloss Polyurethane.",
-        imagen: "https://via.placeholder.com/200?text=Fender+Stratocaster"
-    },
-    {
-        codigo: "PROD02",
-        nombre: "Bajo Eléctrico Ibanez SR300E",
-        categoria: "Bajos",
-        precio: 380000,
-        stock: 4,
-        descripcion: "Bajo de 4 cuerdas con pastillas PowerSpan Dual Coil.",
-        imagen: "https://via.placeholder.com/200?text=Bajo+Ibanez"
-    },
-    {
-        codigo: "PROD03",
-        nombre: "Batería Acústica Pearl Export",
-        categoria: "Baterías",
-        precio: 890000,
-        stock: 2,
-        descripcion: "Set de batería de 5 piezas con herrajes incluidos.",
-        imagen: "https://via.placeholder.com/200?text=Bateria+Pearl"
-    },
-    {
-        codigo: "PROD04",
-        nombre: "Teclado Sintetizador Yamaha PSR-E373",
-        categoria: "Teclados",
-        precio: 210000,
-        stock: 8,
-        descripcion: "Teclado portátil de 61 teclas sensibles a la pulsación.",
-        imagen: "https://via.placeholder.com/200?text=Teclado+Yamaha"
-    },
-    {
-        codigo: "PROD05",
-        nombre: "Micrófono Condensador Audio-Technica AT2020",
-        categoria: "Accesorios",
-        precio: 115000,
-        stock: 12,
-        descripcion: "Ideal para estudio en casa y grabaciones vocales.",
-        imagen: "https://via.placeholder.com/200?text=Microfono+AT2020"
-    }
+    // Guitarras Acústicas
+    { codigo: "GA001", categoria: "Guitarras Acústicas", nombre: "Guitarra Acústica Folk", marca: "Yamaha", modelo: "F310", stock: 8, precio: 129990, descripcion: "Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes." },
+    { codigo: "GA002", categoria: "Guitarras Acústicas", nombre: "Guitarra Acústica Dreadnought", marca: "Fender", modelo: "CD-60S", stock: 5, precio: 189990, descripcion: "Tapa de abeto macizo, brazo de caoba. Sonido cálido y proyectado." },
+    { codigo: "GA003", categoria: "Guitarras Acústicas", nombre: "Guitarra Acústica Clásica 4/4", marca: "Yamaha", modelo: "C40", stock: 10, precio: 89990, descripcion: "Nailon, tapa de abeto. Ideal para estudio y flamenco." },
+    { codigo: "GA004", categoria: "Guitarras Acústicas", nombre: "Guitarra Electroacústica", marca: "Takamine", modelo: "GN20CE", stock: 3, precio: 349990, descripcion: "Pickup integrado, afinador incorporado." },
+    { codigo: "GA005", categoria: "Guitarras Acústicas", nombre: "Guitarra 3/4 Niños", marca: "Yamaha", modelo: "JR1", stock: 6, precio: 79990, descripcion: "Tamaño reducido para niños de 6 a 10 años." },
+    
+    // Guitarras Eléctricas
+    { codigo: "GE001", categoria: "Guitarras Eléctricas", nombre: "Guitarra Eléctrica Stratocaster", marca: "Squier", modelo: "Affinity Strat", stock: 5, precio: 249990, descripcion: "Cuerpo de álamo, mástil de arce, pastillas SSS." },
+    { codigo: "GE002", categoria: "Guitarras Eléctricas", nombre: "Guitarra Eléctrica Les Paul", marca: "Epiphone", modelo: "Les Paul Std", stock: 4, precio: 329990, descripcion: "Cuerpo caoba, tapa arce, pastillas humbucker." },
+    { codigo: "GE003", categoria: "Guitarras Eléctricas", nombre: "Guitarra Eléctrica SG", marca: "Epiphone", modelo: "SG Standard", stock: 3, precio: 319990, descripcion: "Cuerpo caoba, mástil caoba, 2 humbuckers." },
+    { codigo: "GE004", categoria: "Guitarras Eléctricas", nombre: "Guitarra Eléctrica Telecaster", marca: "Squier", modelo: "Affinity Tele", stock: 4, precio: 239990, descripcion: "Cuerpo álamo, clavijero vintage, 2 pastillas single." },
+    { codigo: "GE005", categoria: "Guitarras Eléctricas", nombre: "Guitarra Eléctrica Semi-hollow", marca: "Epiphone", modelo: "ES-335", stock: 2, precio: 549990, descripcion: "Semi-hueca, 2 humbuckers, ideal para jazz y blues." },
+
+    // Bajos Eléctricos
+    { codigo: "BA001", categoria: "Bajos Eléctricos", nombre: "Bajo Eléctrico 4 Cuerdas", marca: "Squier", modelo: "Affinity PJ", stock: 5, precio: 299990, descripcion: "Pickup PJ, cuerpo álamo, mástil arce." },
+    { codigo: "BA002", categoria: "Bajos Eléctricos", nombre: "Bajo Eléctrico Jazz Bass", marca: "Fender", modelo: "Player Jazz", stock: 2, precio: 699990, descripcion: "Alder body, 2 Alnico V Jazz single-coil." },
+    { codigo: "BA003", categoria: "Bajos Eléctricos", nombre: "Bajo Acústico 4 Cuerdas", marca: "Yamaha", modelo: "APX700II", stock: 2, precio: 429990, descripcion: "Electroacústico, afinador incorporado." },
+
+    // Baterías
+    { codigo: "BT001", categoria: "Baterías", nombre: "Batería Acústica 5 piezas", marca: "Pearl", modelo: "Roadshow", stock: 2, precio: 599990, descripcion: "Incluye stands, platillos y pedal de bombo." },
+    { codigo: "BT002", categoria: "Baterías", nombre: "Batería Electrónica 8 pads", marca: "Roland", modelo: "TD-02KV", stock: 2, precio: 799990, descripcion: "Módulo TD-02, 8 pads de goma, pedal hi-hat." },
+    { codigo: "BT003", categoria: "Baterías", nombre: "Caja Snare 14\"", marca: "Pearl", modelo: "STE1450", stock: 4, precio: 89990, descripcion: "Acero, 14x5\", 10 tensores." },
+    { codigo: "BT004", categoria: "Baterías", nombre: "Platillo Hi-Hat 14\"", marca: "Zildjian", modelo: "A Series", stock: 3, precio: 149990, descripcion: "Latón B20, sonido brillante y claro." },
+    { codigo: "BT005", categoria: "Baterías", nombre: "Platillo Crash 16\"", marca: "Zildjian", modelo: "A Series", stock: 3, precio: 129990, descripcion: "Latón B20, ataque rápido." },
+
+    // Teclados y Pianos
+    { codigo: "TC001", categoria: "Teclados y Pianos", nombre: "Teclado Digital 61 teclas", marca: "Yamaha", modelo: "PSR-E373", stock: 4, precio: 249990, descripcion: "61 teclas sensibles al tacto, 622 voces." },
+    { codigo: "TC002", categoria: "Teclados y Pianos", nombre: "Piano Digital 88 teclas", marca: "Yamaha", modelo: "P-45", stock: 2, precio: 499990, descripcion: "88 teclas pesadas, 10 voces, pedal sustain incluido." },
+    { codigo: "TC003", categoria: "Teclados y Pianos", nombre: "Sintetizador 49 teclas", marca: "Arturia", modelo: "Minilab MKII", stock: 5, precio: 129990, descripcion: "MIDI controller, 49 mini teclas." },
+    { codigo: "TC004", categoria: "Teclados y Pianos", nombre: "Teclado MIDI 88 teclas", marca: "M-Audio", modelo: "Hammer 88", stock: 2, precio: 399990, descripcion: "88 teclas martillo, sin sonidos propios." },
+
+    // Amplificadores
+    { codigo: "AM001", categoria: "Amplificadores", nombre: "Amplificador Guitarra 15W", marca: "Fender", modelo: "Frontman 15G", stock: 5, precio: 99990, descripcion: "15W, distorsión incorporada, entrada auxiliar." },
+    { codigo: "AM002", categoria: "Amplificadores", nombre: "Amplificador Guitarra 40W", marca: "Marshall", modelo: "MG40GFX", stock: 3, precio: 299990, descripcion: "40W, 4 canales, efectos digitales integrados." },
+    { codigo: "AM003", categoria: "Amplificadores", nombre: "Amplificador Bajo 100W", marca: "Hartke", modelo: "HD100", stock: 2, precio: 449990, descripcion: "100W, tweeter integrado, ecualizador de 4 bandas." },
+    { codigo: "AM004", categoria: "Amplificadores", nombre: "Amplificador Acústico 40W", marca: "Fishman", modelo: "Loudbox Mini", stock: 2, precio: 499990, descripcion: "60W, 2 canales, reverb y chorus incorporados." },
+
+    // Micrófonos
+    { codigo: "MI001", categoria: "Micrófonos", nombre: "Micrófono Dinámico Cardioide", marca: "Shure", modelo: "SM58", stock: 8, precio: 149990, descripcion: "Estándar industria para voz en vivo." },
+    { codigo: "MI002", categoria: "Micrófonos", nombre: "Micrófono Dinámico Instrumento", marca: "Shure", modelo: "SM57", stock: 6, precio: 139990, descripcion: "Ideal para captura de instrumentos y amplificadores." },
+    { codigo: "MI003", categoria: "Micrófonos", nombre: "Micrófono Condensador", marca: "Audio-Tech.", modelo: "AT2020", stock: 4, precio: 199990, descripcion: "Cardioide, XLR, ideal para grabación en estudio." },
+    { codigo: "MI004", categoria: "Micrófonos", nombre: "Micrófono USB de Condensador", marca: "Blue", modelo: "Yeti", stock: 5, precio: 299990, descripcion: "USB, 4 patrones polares, ideal para streaming y podcast." },
+
+    // Pedales de Efectos
+    { codigo: "PE001", categoria: "Pedales de Efectos", nombre: "Pedal Distorsión", marca: "Boss", modelo: "DS-1", stock: 7, precio: 79990, descripcion: "Clásico pedal de distorsión, 3 controles." },
+    { codigo: "PE002", categoria: "Pedales de Efectos", nombre: "Pedal Reverb", marca: "Boss", modelo: "RV-6", stock: 4, precio: 179990, descripcion: "8 modos de reverb, control de shimmer." },
+    { codigo: "PE003", categoria: "Pedales de Efectos", nombre: "Pedal Multi-efectos", marca: "Boss", modelo: "ME-80", stock: 2, precio: 349990, descripcion: "Diseño tipo pedalboard, 8 efectos simultáneos." },
+    { codigo: "PE004", categoria: "Pedales de Efectos", nombre: "Pedal Tuner Cromático", marca: "Boss", modelo: "TU-3", stock: 8, precio: 89990, descripcion: "Afinador cromático, indicador de tono." },
+    { codigo: "PE005", categoria: "Pedales de Efectos", nombre: "Pedal Delay", marca: "MXR", modelo: "Carbon Copy", stock: 4, precio: 179990, descripcion: "Delay analógico cálido, tiempo 600ms." },
+    { codigo: "PE006", categoria: "Pedales de Efectos", nombre: "Pedal Overdrive", marca: "Ibanez", modelo: "TS9", stock: 6, precio: 99990, descripcion: "Tube Screamer clásico, sonido suave y orgánico." },
+
+    // Accesorios
+    { codigo: "AC001", categoria: "Accesorios", nombre: "Cuerdas Guitarra Eléctrica 09-42", marca: "Ernie Ball", modelo: "Super Slinky", stock: 25, precio: 8990, descripcion: "Juego 6 cuerdas, calibre ligero." },
+    { codigo: "AC002", categoria: "Accesorios", nombre: "Cuerdas Guitarra Acústica 12-53", marca: "Ernie Ball", modelo: "Earthwood", stock: 20, precio: 10990, descripcion: "Bronce fósforo, sonido cálido." },
+    { codigo: "AC003", categoria: "Accesorios", nombre: "Cuerdas Bajo 45-105", marca: "Ernie Ball", modelo: "Regular Slinky", stock: 12, precio: 14990, descripcion: "Cuerdas de níquel enrollado, set 4 cuerdas." },
+    { codigo: "AC004", categoria: "Accesorios", nombre: "Púas de Guitarra x10 (0.73mm)", marca: "Fender", modelo: "351", stock: 50, precio: 3990, descripcion: "Celulosa, grosor medio." },
+    { codigo: "AC005", categoria: "Accesorios", nombre: "Capotraste Guitarra", marca: "Dunlop", modelo: "Trigger", stock: 15, precio: 12990, descripcion: "Capotraste de resorte, compatible 6 cuerdas." },
+    { codigo: "AC006", categoria: "Accesorios", nombre: "Afinador de Clip", marca: "Snark", modelo: "SN-5", stock: 20, precio: 8990, descripcion: "Afinador cromático de clip, pantalla giratoria." },
+    { codigo: "AC007", categoria: "Accesorios", nombre: "Cable Instrumento 3m", marca: "Monster", modelo: "S100-I-3", stock: 15, precio: 12990, descripcion: "Cable trenzado, conectores dorados, 3 metros." },
+    { codigo: "AC008", categoria: "Accesorios", nombre: "Cable Instrumento 6m", marca: "Monster", modelo: "S100-I-6", stock: 10, precio: 17990, descripcion: "Cable trenzado, conectores dorados, 6 metros." },
+    { codigo: "AC009", categoria: "Accesorios", nombre: "Soporte Guitarra de Piso", marca: "Hercules", modelo: "GS302B", stock: 12, precio: 22990, descripcion: "Soporte plegable con enganche automático." },
+    { codigo: "AC010", categoria: "Accesorios", nombre: "Soporte Guitarra de Pared", marca: "Hercules", modelo: "WAH-202", stock: 10, precio: 18990, descripcion: "Montaje a pared, enganche automático." },
+
+    // Estudio y Grabación
+    { codigo: "ES001", categoria: "Estudio y Grabación", nombre: "Interfaz de Audio 2x2 USB", marca: "Focusrite", modelo: "Scarlett Solo", stock: 4, precio: 149990, descripcion: "1 entrada XLR+instrumento, 2 salidas, 24bit/192kHz." },
+    { codigo: "ES002", categoria: "Estudio y Grabación", nombre: "Auriculares de Estudio", marca: "Audio-Tech.", modelo: "ATH-M20x", stock: 6, precio: 79990, descripcion: "Circumaurales, respuesta 15Hz-20kHz." },
+    { codigo: "ES003", categoria: "Estudio y Grabación", nombre: "Auriculares de Estudio Pro", marca: "Audio-Tech.", modelo: "ATH-M50x", stock: 4, precio: 219990, descripcion: "Referencia de industria, sonido neutro y detallado." },
+    { codigo: "ES004", categoria: "Estudio y Grabación", nombre: "Monitor de Estudio 5\"", marca: "Yamaha", modelo: "HS5", stock: 2, precio: 349990, descripcion: "Altavoz activo, respuesta plana, ideal mezcla." },
+    { codigo: "ES005", categoria: "Estudio y Grabación", nombre: "Pop Filter para Micrófono", marca: "Sennheiser", modelo: "MZP 40", stock: 8, precio: 149990, descripcion: "Doble malla, brazo flexible con clip." }
 ];
 
 // ==========================================
-// 3. INICIALIZACIÓN DE STORAGE (MOCK DB)
+// 3. INICIALIZACIÓN
 // ==========================================
 function inicializarBaseDatos() {
-    if (!localStorage.getItem("db_productos")) {
-        localStorage.setItem("db_productos", JSON.stringify(baseDatosProductos));
-    }
-    if (!localStorage.getItem("db_usuarios")) {
-        localStorage.setItem("db_usuarios", JSON.stringify([]));
-    }
-    if (!localStorage.getItem("carrito")) {
-        localStorage.setItem("carrito", JSON.stringify([]));
-    }
+    localStorage.setItem("db_productos", JSON.stringify(baseDatosProductos));
+    if (!localStorage.getItem("db_usuarios")) localStorage.setItem("db_usuarios", JSON.stringify([]));
+    if (!localStorage.getItem("carrito")) localStorage.setItem("carrito", JSON.stringify([]));
 }
 
-// ==========================================
-// 4. FUNCIONES DE REGIONES Y COMUNAS
-// ==========================================
 function inicializarRegionesYComunas(idRegionSelect, idComunaSelect) {
     const regionSelect = document.getElementById(idRegionSelect);
     const comunaSelect = document.getElementById(idComunaSelect);
-
     if (!regionSelect || !comunaSelect) return;
 
     regionSelect.innerHTML = '<option value="">-- Seleccione Región --</option>';
@@ -129,95 +131,142 @@ function inicializarRegionesYComunas(idRegionSelect, idComunaSelect) {
 }
 
 // ==========================================
-// 5. VALIDACIÓN Y GUARDADO DE REGISTRO
+// 4. RENDERIZAR PRODUCTOS Y FILTRAR
 // ==========================================
-function esCorreoValido(correo) {
-    const dominiosValidos = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
-    return dominiosValidos.some(dominio => correo.toLowerCase().endsWith(dominio));
+function renderizarProductos(categoriaFiltro = "Todas") {
+    const container = document.getElementById("featured-products-container");
+    if (!container) return;
+
+    const productos = JSON.parse(localStorage.getItem("db_productos")) || baseDatosProductos;
+    container.innerHTML = "";
+
+    const filtrados = categoriaFiltro === "Todas" 
+        ? productos 
+        : productos.filter(p => p.categoria === categoriaFiltro);
+
+    if (filtrados.length === 0) {
+        container.innerHTML = "<p>No hay productos en esta categoría.</p>";
+        return;
+    }
+
+    filtrados.forEach(p => {
+        container.innerHTML += `
+            <div class="product-card">
+                <span class="badge-code">${p.codigo}</span>
+                <h4>${p.nombre}</h4>
+                <p><strong>Marca:</strong> ${p.marca} | <strong>Modelo:</strong> ${p.modelo}</p>
+                <p><strong>Categoría:</strong> ${p.categoria}</p>
+                <p>${p.descripcion}</p>
+                <p>Stock disponible: <strong>${p.stock}</strong></p>
+                <p class="precio"><strong>$${p.precio.toLocaleString('es-CL')}</strong></p>
+                <button class="btn-primary" onclick="agregarAlCarrito('${p.codigo}')">Añadir al Carrito</button>
+            </div>
+        `;
+    });
 }
 
-function validarRegistro(e) {
+function toggleMenuMenuDots() {
+    const dropdown = document.getElementById("catalogDropdown");
+    if (dropdown) {
+        dropdown.classList.toggle("show");
+    }
+}
+
+function filtrarPorCategoria(cat) {
+    renderizarProductos(cat);
+    const dropdown = document.getElementById("catalogDropdown");
+    if (dropdown) dropdown.classList.remove("show");
+}
+
+// ==========================================
+// 5. CARRITO Y USUARIOS
+// ==========================================
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+function actualizarContadorCarrito() {
+    const carrito = obtenerCarrito();
+    const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    const cartCountEl = document.getElementById("cart-count");
+    if (cartCountEl) cartCountEl.innerText = totalItems;
+}
+
+function agregarAlCarrito(codigo) {
+    const productos = JSON.parse(localStorage.getItem("db_productos")) || [];
+    const prod = productos.find(p => p.codigo === codigo);
+    if (!prod) return;
+
+    let carrito = obtenerCarrito();
+    const itemExistente = carrito.find(item => item.codigo === codigo);
+
+    if (itemExistente) {
+        itemExistente.cantidad++;
+    } else {
+        carrito.push({
+            codigo: prod.codigo,
+            nombre: prod.nombre,
+            precio: prod.precio,
+            cantidad: 1
+        });
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarContadorCarrito();
+    alert(`"${prod.nombre}" añadido al carrito.`);
+}
+
+function iniciarSesion(e) {
     e.preventDefault();
-
-    const run = document.getElementById("run").value.trim();
-    const nombre = document.getElementById("nombre").value.trim();
-    const apellidos = document.getElementById("apellidos").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const clave = document.getElementById("clave").value;
-    const confirmarClave = document.getElementById("confirmarClave").value;
-    const region = document.getElementById("region").value;
-    const comuna = document.getElementById("comuna").value;
-    const direccion = document.getElementById("direccion").value.trim();
-
-    // Validaciones
-    const runRegex = /^[0-9]{7,8}[0-9kK]{1}$/;
-    if (!runRegex.test(run)) {
-        alert("El RUN debe ser sin puntos ni guión (ej: 19011022K).");
-        return false;
-    }
-
-    if (nombre.length === 0 || nombre.length > 50) {
-        alert("El nombre es requerido y debe tener máximo 50 caracteres.");
-        return false;
-    }
-
-    if (apellidos.length === 0 || apellidos.length > 100) {
-        alert("El apellido es requerido y debe tener máximo 100 caracteres.");
-        return false;
-    }
-
-    if (!esCorreoValido(correo) || correo.length > 100) {
-        alert("El correo debe terminar en @duoc.cl, @profesor.duoc.cl o @gmail.com.");
-        return false;
-    }
-
-    if (clave.length < 4 || clave.length > 10) {
-        alert("La contraseña debe tener entre 4 y 10 caracteres.");
-        return false;
-    }
-
-    if (clave !== confirmarClave) {
-        alert("Las contraseñas no coinciden.");
-        return false;
-    }
-
-    if (!region || !comuna) {
-        alert("Debe seleccionar Región y Comuna.");
-        return false;
-    }
-
-    if (direccion.length === 0 || direccion.length > 300) {
-        alert("La dirección es requerida.");
-        return false;
-    }
-
-    // Guardar nuevo usuario en la DB Local
+    const correoInput = document.getElementById("loginCorreo").value.trim();
+    const claveInput = document.getElementById("loginClave").value;
     const usuarios = JSON.parse(localStorage.getItem("db_usuarios")) || [];
-    const existe = usuarios.some(u => u.run === run || u.correo === correo);
 
-    if (existe) {
-        alert("El RUN o correo ya se encuentra registrado.");
-        return false;
+    const usuarioEncontrado = usuarios.find(u => u.correo.toLowerCase() === correoInput.toLowerCase() && u.clave === claveInput);
+
+    if (usuarioEncontrado) {
+        localStorage.setItem("usuarioSesion", JSON.stringify(usuarioEncontrado));
+        alert(`¡Bienvenido/a ${usuarioEncontrado.nombre}!`);
+        window.location.href = "TiendaSonido.html";
+    } else {
+        alert("Correo o contraseña incorrectos.");
     }
-
-    const nuevoUsuario = {
-        run,
-        nombre,
-        apellidos,
-        correo,
-        clave,
-        region,
-        comuna,
-        direccion,
-        fechaRegistro: new Date().toISOString()
-    };
-
-    usuarios.push(nuevoUsuario);
-    localStorage.setItem("db_usuarios", JSON.stringify(usuarios));
-
-    alert("Registro exitoso. Datos almacenados en la base de datos local.");
-    window.location.href = "login.html";
 }
+
+function cerrarSesion() {
+    localStorage.removeItem("usuarioSesion");
+    alert("Has cerrado sesión.");
+    window.location.reload();
+}
+
+function verificarEstadoSesion() {
+    const usuarioSesion = JSON.parse(localStorage.getItem("usuarioSesion"));
+    const nav = document.querySelector(".main-nav ul");
+
+    if (usuarioSesion && nav) {
+        const loginLink = nav.querySelector('a[href="Login.html"]');
+        const registroLink = nav.querySelector('a[href="registro.html"]');
+
+        if (loginLink) loginLink.parentElement.remove();
+        if (registroLink) registroLink.parentElement.remove();
+
+        const userLi = document.createElement("li");
+        userLi.innerHTML = `<span>Hola, <strong>${usuarioSesion.nombre}</strong></span>`;
+        
+        const logoutLi = document.createElement("li");
+        logoutLi.innerHTML = `<a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>`;
+
+        nav.appendChild(userLi);
+        nav.appendChild(logoutLi);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarBaseDatos();
+    actualizarContadorCarrito();
+    renderizarProductos();
+    verificarEstadoSesion();
+});
 
 // ==========================================
 // 6. GESTIÓN DEL CARRITO Y TIENDA

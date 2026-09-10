@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos - Sonido Vivo</title>
+    <title>Productos - Sonido Vivo</title>
     <link rel="stylesheet" href="CSSTienda.css">
 </head>
 <body>
@@ -12,18 +12,39 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="TiendaSonido.html">Home</a></li>
-                <li><a href="productos.html">Productos</a></li>
+                <li><a href="Productos.html">Productos</a></li>
                 <li><a href="registro.html">Registro</a></li>
-                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="Login.html">Iniciar Sesión</a></li>
                 <li><a href="Carrito.html">Carrito (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>Catálogo de Instrumentos y Equipos</h2>
-        
-        <!-- Contenedor donde se cargan dinámicamente los productos -->
+    <main class="main-content">
+        <div class="catalog-header">
+    <h2>Catálogo de Instrumentos</h2>
+    
+    <!-- Menú desplegable con tres líneas (Hamburguesa) -->
+    <div class="dropdown-dots">
+        <button class="dots-btn" onclick="toggleMenuMenuDots()" title="Filtrar por Categoría">
+            <span class="hamburger-icon">&#9776;</span> Categorías
+        </button>
+        <div id="catalogDropdown" class="dropdown-content">
+            <a href="#" onclick="filtrarPorCategoria('Todas')">Todas las Categorías</a>
+            <a href="#" onclick="filtrarPorCategoria('Guitarras Acústicas')">Guitarras Acústicas</a>
+            <a href="#" onclick="filtrarPorCategoria('Guitarras Eléctricas')">Guitarras Eléctricas</a>
+            <a href="#" onclick="filtrarPorCategoria('Bajos Eléctricos')">Bajos Eléctricos</a>
+            <a href="#" onclick="filtrarPorCategoria('Baterías')">Baterías</a>
+            <a href="#" onclick="filtrarPorCategoria('Teclados y Pianos')">Teclados y Pianos</a>
+            <a href="#" onclick="filtrarPorCategoria('Amplificadores')">Amplificadores</a>
+            <a href="#" onclick="filtrarPorCategoria('Micrófonos')">Micrófonos</a>
+            <a href="#" onclick="filtrarPorCategoria('Pedales de Efectos')">Pedales de Efectos</a>
+            <a href="#" onclick="filtrarPorCategoria('Accesorios')">Accesorios</a>
+            <a href="#" onclick="filtrarPorCategoria('Estudio y Grabación')">Estudio y Grabación</a>
+            </div>
+        </div>
+    </div>
+
         <div id="featured-products-container" class="products-grid"></div>
     </main>
 
