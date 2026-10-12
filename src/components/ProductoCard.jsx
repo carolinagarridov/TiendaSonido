@@ -2,8 +2,18 @@ import { Card, Button, Badge, Col } from 'react-bootstrap';
 
 function ProductoCard({ producto, agregarAlCarrito }) {
   return (
-    <Col md={4} className="mb-4">
+    /* Aplicamos la combinación de breakpoints recomendada por la PPT */
+    <Col xs={12} md={6} lg={4} className="mb-4">
       <Card className="h-100 shadow-sm">
+        {/* Si agregas imágenes de producto, asegúrate de usar la prop fluid de React Bootstrap */}
+        {producto.imagen && (
+          <Card.Img 
+            variant="top" 
+            src={producto.imagen} 
+            alt={producto.nombre} 
+            className="img-fluid" 
+          />
+        )}
         <Card.Body className="d-flex flex-column">
           <div className="d-flex justify-content-between align-items-center mb-2">
             <Badge bg="secondary">{producto.codigo}</Badge>

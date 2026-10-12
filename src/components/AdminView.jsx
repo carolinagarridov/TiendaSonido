@@ -21,12 +21,34 @@ function AdminView({ productos, agregarProducto, eliminarProducto }) {
     <Container className="mt-4">
       <h2>Panel Administrador</h2>
       <Form onSubmit={handleSubmit} className="p-3 border rounded bg-light mb-4">
+        {/* AQUÍ VA EL BLOQUE CON xs={12} md={3} */}
         <Row>
-          <Col md={3}><Form.Group className="mb-2"><Form.Label>Código</Form.Label><Form.Control required value={form.codigo} onChange={e => setForm({...form, codigo: e.target.value.toUpperCase()})} /></Form.Group></Col>
-          <Col md={3}><Form.Group className="mb-2"><Form.Label>Nombre</Form.Label><Form.Control required value={form.nombre} onChange={e => setForm({...form, nombre: e.target.value})} /></Form.Group></Col>
-          <Col md={3}><Form.Group className="mb-2"><Form.Label>Marca</Form.Label><Form.Control required value={form.marca} onChange={e => setForm({...form, marca: e.target.value})} /></Form.Group></Col>
-          <Col md={3}><Form.Group className="mb-2"><Form.Label>Precio (CLP)</Form.Label><Form.Control type="number" required value={form.precio} onChange={e => setForm({...form, precio: e.target.value})} /></Form.Group></Col>
+          <Col xs={12} md={3}>
+            <Form.Group className="mb-2">
+              <Form.Label>Código</Form.Label>
+              <Form.Control required value={form.codigo} onChange={e => setForm({...form, codigo: e.target.value.toUpperCase()})} />
+            </Form.Group>
+          </Col>
+          <Col xs={12} md={3}>
+            <Form.Group className="mb-2">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control required value={form.nombre} onChange={e => setForm({...form, nombre: e.target.value})} />
+            </Form.Group>
+          </Col>
+          <Col xs={12} md={3}>
+            <Form.Group className="mb-2">
+              <Form.Label>Marca</Form.Label>
+              <Form.Control required value={form.marca} onChange={e => setForm({...form, marca: e.target.value})} />
+            </Form.Group>
+          </Col>
+          <Col xs={12} md={3}>
+            <Form.Group className="mb-2">
+              <Form.Label>Precio (CLP)</Form.Label>
+              <Form.Control type="number" required value={form.precio} onChange={e => setForm({...form, precio: e.target.value})} />
+            </Form.Group>
+          </Col>
         </Row>
+        
         <Button type="submit" variant="success" className="mt-2">Guardar Producto</Button>
       </Form>
 
