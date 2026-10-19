@@ -1,0 +1,95 @@
+/* Estilos propios encima de Bootstrap. Se mantienen los colores del diseño original:
+   negro #1e1e1e en barra y pie, naranjo #ff9900 como acento. */
+:root {
+  --sv-oscuro: #1e1e1e;
+  --sv-acento: #ff9900;
+  --bs-body-bg: #f4f4f4;
+  --bs-link-color-rgb: 0, 110, 230;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+}
+
+.text-acento {
+  color: var(--sv-acento) !important;
+}
+
+/* Barra de navegación */
+.barra-principal {
+  background-color: var(--sv-oscuro);
+}
+.barra-principal .nav-link.active {
+  color: #fff;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--sv-acento);
+}
+.boton-carrito {
+  background-color: var(--sv-acento);
+  color: #000 !important;
+  font-weight: 600;
+  border-radius: 6px;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+.boton-carrito.active {
+  box-shadow: none !important;
+}
+@media (max-width: 991.98px) {
+  .boton-carrito {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+  color: #fff;
+}
+
+/* Tarjetas de producto */
+.tarjeta-producto {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tarjeta-producto:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12) !important;
+}
+.contenedor-imagen {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #fff;
+  overflow: hidden;
+}
+.contenedor-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+.codigo-producto {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+.precio {
+  color: #1a7f37;
+}
+
+.miniatura {
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.contenedor-formulario {
+  max-width: 480px;
+}
+
+/* Pie de página */
+.pie-pagina {
+  background-color: var(--sv-oscuro);
+  color: #fff;
+}

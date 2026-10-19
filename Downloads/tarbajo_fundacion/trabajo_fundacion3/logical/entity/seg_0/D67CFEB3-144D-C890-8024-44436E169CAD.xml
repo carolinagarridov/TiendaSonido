@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D67CFEB3-144D-C890-8024-44436E169CAD" name="voluntarios">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:50:43 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>A7961D02-B61A-C26A-169C-983A185875E0</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="profesion" id="BAA9ECA0-E9DF-D3DC-EA28-BA824AC7283F">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:50:51 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="horas_dedicadas" id="4788A1A2-4186-23DE-7364-6A36348B0188">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:50:51 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

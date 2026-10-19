@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4761FFE4-E2D9-3C42-23FF-8D03BB795A82" name="recurso">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 12:53:52 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="1CD731C5-96B1-7D4E-B18E-CA837B7AB47B">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 12:54:00 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="135F1EA9-C40A-2B85-0FAF-F55D08DCD5FE">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 12:54:00 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="64462B64-4EF1-7C6F-6A1F-17F9E5780593">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 12:54:00 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8FEA6B2F-016B-0727-443D-42E680DA6E8E" name="recurso PK">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 12:54:04 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1CD731C5-96B1-7D4E-B18E-CA837B7AB47B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

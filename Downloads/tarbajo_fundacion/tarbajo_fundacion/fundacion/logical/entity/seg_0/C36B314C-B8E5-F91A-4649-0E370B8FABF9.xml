@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C36B314C-B8E5-F91A-4649-0E370B8FABF9" name="contratados">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:36:14 UTC</createdTime>
+<ownerDesignName>fundacion</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>A7961D02-B61A-C26A-169C-983A185875E0</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="fcha_contrato" id="53155F83-B324-3FAA-59B1-EB2259607448">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:36:22 UTC</createdTime>
+<ownerDesignName>fundacion</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo_trabajador" id="CF2AD25E-DDD4-6961-134D-3F73F1CF8BB3">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:36:22 UTC</createdTime>
+<ownerDesignName>fundacion</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sueldo_trabajador" id="E28874FD-D64C-5454-DDB4-C6E3FB5CFA51">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 01:36:22 UTC</createdTime>
+<ownerDesignName>fundacion</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

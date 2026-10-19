@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="pueden realizar" directorySegmentName="seg_0" id="0A934D63-28CB-C0E4-B90B-C804920002D0">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 13:07:45 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>06CB5ABD-FD1C-78F9-5971-7845AA36D113</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A7961D02-B61A-C26A-169C-983A185875E0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

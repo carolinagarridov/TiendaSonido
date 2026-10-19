@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="pertenece a" directorySegmentName="seg_0" id="FD2CE541-AC4C-A612-4E1D-3524099BD16B">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 13:29:25 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<sourcePk>863A88E2-280C-5F99-0027-B1877DFABA25</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>901A440E-B5C8-33B1-7C31-60AB8FE489A2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D8267E56-B708-7A13-A20E-08E304C641CA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

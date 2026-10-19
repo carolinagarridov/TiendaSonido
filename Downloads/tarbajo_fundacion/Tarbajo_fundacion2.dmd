@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Tarbajo_fundacion2" id="6ADB95BC-59FC-1800-29F7-9B2E532407DD" version="3.5">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:04:16 UTC</createdTime>
+<ownerDesignName>fundacion</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6ADB95BC-59FC-1800-29F7-9B2E532407DD</designId>
+</OSDM_Design>
