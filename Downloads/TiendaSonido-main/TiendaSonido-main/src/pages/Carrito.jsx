@@ -5,10 +5,12 @@ import ImagenConRespaldo from '../components/ImagenConRespaldo'
 import { useAuth } from '../context/AuthContext'
 import { useCarrito } from '../context/CarritoContext'
 import {
+  guardarPedidoApi,
   guardarPedidos,
   guardarProductos,
   obtenerPedidos,
   obtenerProductos,
+  sincronizarProductosDesdeApi,
 } from '../services/almacenamiento'
 import { descontarStock } from '../utils/carrito'
 import { formatearPrecio } from '../utils/formato'
@@ -27,7 +29,7 @@ export default function Carrito() {
   )
   const [error, setError] = useState('')
 
-  function confirmarPedido() {
+  async function confirmarPedido() {
     if (!usuario) {
       navigate('/login', { state: { desde: '/carrito' } })
       return
@@ -37,7 +39,6 @@ export default function Carrito() {
       return
     }
 
-    // El stock se descuenta al confirmar (evita vender lo mismo dos veces)
     const productosActualizados = descontarStock(obtenerProductos(), carrito)
     if (!productosActualizados) {
       setError('Uno o más productos ya no tienen stock suficiente. Revisa tu carrito.')
@@ -54,7 +55,26 @@ export default function Carrito() {
         direccion: tipoEntrega === 'despacho' ? direccion.trim() : DIRECCION_TIENDA,
       },
     })
-    guardarProductos(productosActualizados)
+
+    // Intenta guardar la boleta en Spring Boot / MySQL
+    try {
+      await guardarPedidoApi({
+        usuarioId: usuario.id || 1,
+        tipoEntrega,
+        direccionEntrega: tipoEntrega === 'despacho' ? direccion.trim() : DIRECCION_TIENDA,
+        total,
+        items: carrito.map((item) => ({
+          productoId: item.id,
+          codigo: item.codigo,
+          cantidad: item.cantidad,
+          precioUnitario: item.precio,
+        })),
+      })
+      await sincronizarProductosDesdeApi()
+    } catch {
+      guardarProductos(productosActualizados)
+    }
+
     guardarPedidos([...pedidos, pedido])
     vaciar()
     navigate('/mis-pedidos', { state: { nuevo: pedido.numero } })

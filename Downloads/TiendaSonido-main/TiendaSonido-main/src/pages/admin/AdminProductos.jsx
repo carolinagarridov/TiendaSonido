@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import { Alert, Button, Card, Col, Form, Row, Table } from 'react-bootstrap'
 import { CATEGORIAS } from '../../data/productos'
-import { guardarProductos, obtenerProductos } from '../../services/almacenamiento'
+import {
+  actualizarProductoApi,
+  crearProductoApi,
+  eliminarProductoApi,
+  guardarProductos,
+  obtenerProductos,
+} from '../../services/almacenamiento'
 import { formatearPrecio } from '../../utils/formato'
 
 const VACIO = {
@@ -25,7 +31,7 @@ export default function AdminProductos({ puedeEditarCatalogo }) {
     guardarProductos(lista)
   }
 
-  function agregar(e) {
+  async function agregar(e) {
     e.preventDefault()
     const codigo = form.codigo.trim().toUpperCase()
     if (productos.some((p) => p.codigo === codigo)) {
@@ -43,20 +49,38 @@ export default function AdminProductos({ puedeEditarCatalogo }) {
       stock: parseInt(form.stock, 10),
       imagen: `img/productos/${codigo}.jpg`,
     }
-    actualizar([...productos, nuevo])
+
+    try {
+      await crearProductoApi(nuevo)
+      setProductos(obtenerProductos())
+    } catch {
+      actualizar([...productos, nuevo])
+    }
+
     setForm(VACIO)
     setMensaje({ tipo: 'success', texto: `Producto "${nuevo.nombre}" agregado.` })
   }
 
-  function eliminar(codigo) {
-    if (window.confirm(`¿Eliminar el producto ${codigo}?`)) {
-      actualizar(productos.filter((p) => p.codigo !== codigo))
+  async function eliminar(producto) {
+    if (window.confirm(`¿Eliminar el producto ${producto.codigo}?`)) {
+      try {
+        if (producto.id) await eliminarProductoApi(producto.id)
+        setProductos(obtenerProductos())
+      } catch {
+        actualizar(productos.filter((p) => p.codigo !== producto.codigo))
+      }
     }
   }
 
-  function cambiarStock(codigo, valor) {
+  async function cambiarStock(producto, valor) {
     const stock = Math.max(0, parseInt(valor, 10) || 0)
-    actualizar(productos.map((p) => (p.codigo === codigo ? { ...p, stock } : p)))
+    const actualizado = { ...producto, stock }
+    try {
+      if (producto.id) await actualizarProductoApi(producto.id, actualizado)
+      setProductos(obtenerProductos())
+    } catch {
+      actualizar(productos.map((p) => (p.codigo === producto.codigo ? actualizado : p)))
+    }
   }
 
   const campo = (name) => ({
@@ -172,12 +196,12 @@ export default function AdminProductos({ puedeEditarCatalogo }) {
                   min={0}
                   aria-label={`Stock de ${p.nombre}`}
                   value={p.stock}
-                  onChange={(e) => cambiarStock(p.codigo, e.target.value)}
+                  onChange={(e) => cambiarStock(p, e.target.value)}
                 />
               </td>
               {puedeEditarCatalogo && (
                 <td>
-                  <Button size="sm" variant="danger" onClick={() => eliminar(p.codigo)}>
+                  <Button size="sm" variant="danger" onClick={() => eliminar(p)}>
                     Eliminar
                   </Button>
                 </td>
