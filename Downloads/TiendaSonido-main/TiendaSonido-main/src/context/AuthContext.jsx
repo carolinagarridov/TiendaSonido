@@ -3,14 +3,15 @@ import {
   borrarSesion,
   guardarSesion,
   guardarUsuarios,
+  loginApi,
   obtenerSesion,
   obtenerUsuarios,
+  registrarUsuarioApi,
 } from '../services/almacenamiento'
 import { formatearRun } from '../utils/validaciones'
 
 const AuthContext = createContext(null)
 
-// Nunca dejamos la clave dentro del objeto de sesión
 function sinClave(usuario) {
   const { clave: _clave, ...resto } = usuario
   return resto
@@ -19,7 +20,21 @@ function sinClave(usuario) {
 export function AuthProvider({ children }) {
   const [usuario, setUsuario] = useState(() => obtenerSesion())
 
-  function iniciarSesion(correo, clave) {
+  async function iniciarSesion(correo, clave) {
+    try {
+      const usuarioBackend = await loginApi(correo.trim().toLowerCase(), clave)
+      if (usuarioBackend) {
+        const sesion = sinClave({
+          ...usuarioBackend,
+          rol: usuarioBackend.rol.toLowerCase(),
+        })
+        guardarSesion(sesion)
+        setUsuario(sesion)
+        return { ok: true, usuario: sesion }
+      }
+    } catch {
+    }
+
     const encontrado = obtenerUsuarios().find(
       (u) => u.correo.toLowerCase() === correo.trim().toLowerCase() && u.clave === clave,
     )
@@ -33,7 +48,7 @@ export function AuthProvider({ children }) {
     return { ok: true, usuario: sesion }
   }
 
-  function registrar(datos) {
+  async function registrar(datos) {
     const nuevo = {
       run: formatearRun(datos.run),
       nombre: datos.nombre.trim(),
@@ -46,8 +61,16 @@ export function AuthProvider({ children }) {
       rol: 'cliente',
       activo: true,
     }
-    guardarUsuarios([...obtenerUsuarios(), nuevo])
-    const sesion = sinClave(nuevo)
+
+    let guardado = nuevo
+    try {
+      const desdeApi = await registrarUsuarioApi(nuevo)
+      guardado = { ...desdeApi, rol: desdeApi.rol.toLowerCase() }
+    } catch {
+      guardarUsuarios([...obtenerUsuarios(), nuevo])
+    }
+
+    const sesion = sinClave(guardado)
     guardarSesion(sesion)
     setUsuario(sesion)
     return sesion
@@ -66,8 +89,6 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   )
 }
-
-// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   const ctx = useContext(AuthContext)
   if (!ctx) throw new Error('useAuth debe usarse dentro de <AuthProvider>')
