@@ -1,0 +1,7 @@
+Agregar las fotos de los productos con el CÓDIGO como nombre:
+  GA001.jpg, GE002.jpg, BT001.jpg, ...
+
+Si una foto no existe, la tienda muestra automáticamente la imagen de su categoría
+
+Recomendacion para las imagene: fondo blanco, formato 4:3 (por ejemplo 800x600) y menos de 200 KB.
+Para el banner de inicio, guarda una imagen como public/img/hero-banner.jpg y lito.

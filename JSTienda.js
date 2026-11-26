@@ -1,6 +1,4 @@
-// ==========================================
-// 1. BASE DE DATOS DE REGIONES Y COMUNAS
-// ==========================================
+
 const baseDatosRegiones = [
     {
         region: "Región de Valparaíso",
@@ -16,9 +14,7 @@ const baseDatosRegiones = [
     }
 ];
 
-// ==========================================
-// 2. BASE DE DATOS OFICIAL DE PRODUCTOS (IMAGEN)
-// ==========================================
+
 const baseDatosProductos = [
     // Guitarras Acústicas
     { codigo: "GA001", categoria: "Guitarras Acústicas", nombre: "Guitarra Acústica Folk", marca: "Yamaha", modelo: "F310", stock: 8, precio: 129990, descripcion: "Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes." },
@@ -92,9 +88,6 @@ const baseDatosProductos = [
     { codigo: "ES005", categoria: "Estudio y Grabación", nombre: "Pop Filter para Micrófono", marca: "Sennheiser", modelo: "MZP 40", stock: 8, precio: 149990, descripcion: "Doble malla, brazo flexible con clip." }
 ];
 
-// ==========================================
-// 3. INICIALIZACIÓN
-// ==========================================
 function inicializarBaseDatos() {
     localStorage.setItem("db_productos", JSON.stringify(baseDatosProductos));
     if (!localStorage.getItem("db_usuarios")) localStorage.setItem("db_usuarios", JSON.stringify([]));
@@ -130,9 +123,6 @@ function inicializarRegionesYComunas(idRegionSelect, idComunaSelect) {
     });
 }
 
-// ==========================================
-// 4. RENDERIZAR PRODUCTOS Y FILTRAR
-// ==========================================
 function renderizarProductos(categoriaFiltro = "Todas") {
     const container = document.getElementById("featured-products-container");
     if (!container) return;
@@ -178,9 +168,7 @@ function filtrarPorCategoria(cat) {
     if (dropdown) dropdown.classList.remove("show");
 }
 
-// ==========================================
-// 5. CARRITO Y USUARIOS
-// ==========================================
+
 function obtenerCarrito() {
     return JSON.parse(localStorage.getItem("carrito")) || [];
 }
@@ -268,9 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     verificarEstadoSesion();
 });
 
-// ==========================================
-// 6. GESTIÓN DEL CARRITO Y TIENDA
-// ==========================================
+
 function obtenerCarrito() {
     return JSON.parse(localStorage.getItem("carrito")) || [];
 }
@@ -335,9 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarContadorCarrito();
     renderizarProductos();
 });
-// ==========================================
-// 7. AUTENTICACIÓN Y CONTROL DE SESIÓN
-// ==========================================
+
 function iniciarSesion(e) {
     e.preventDefault();
     
@@ -388,7 +372,7 @@ function verificarEstadoSesion() {
     }
 }
 
-// Ejecutar verificación de sesión al cargar la página
+
 document.addEventListener("DOMContentLoaded", () => {
     verificarEstadoSesion();
 });

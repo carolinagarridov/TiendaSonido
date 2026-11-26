@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="se categoriza" directorySegmentName="seg_0" id="ECF8B341-D3FD-FEBE-E927-F68E128A0750">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 13:01:37 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<sourcePk>C43157B1-2574-934B-CD73-22C9A4BEAF8E</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1A8CD56B-88AA-5BE7-B3C4-E113856A1371</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>37B61B3C-06FB-3B52-4FE4-C054FB717A93</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

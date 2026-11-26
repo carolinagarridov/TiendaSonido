@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A7961D02-B61A-C26A-169C-983A185875E0" name="trabajadores">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:41:53 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="numero_interno" id="5255EFBB-BC87-175A-30E0-473F391AF923">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:42:01 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="run" id="CCAECD37-F10C-E915-648F-45909361F5C5">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:42:01 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="run_verificador" id="D04AA658-101C-6545-891D-19C1985DD7E7">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:42:02 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="D55B4215-8634-6B61-4181-0146B2F66256">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 02:16:47 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5A29C297-1C2F-B7A7-CF6D-A47A80732852" name="trabajadores PK">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:48:36 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CCAECD37-F10C-E915-648F-45909361F5C5</attributeRef>
+<attributeRef>D04AA658-101C-6545-891D-19C1985DD7E7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="8B43A392-5C55-71B2-57D8-2063E7BB16B8" mainViewID="FCEF5398-A1B7-D257-77B3-C9B6830503FD">
+<createdBy>Familia ALVLBC</createdBy>
+<createdTime>2025-09-07 00:04:16 UTC</createdTime>
+<ownerDesignName>fundacion</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

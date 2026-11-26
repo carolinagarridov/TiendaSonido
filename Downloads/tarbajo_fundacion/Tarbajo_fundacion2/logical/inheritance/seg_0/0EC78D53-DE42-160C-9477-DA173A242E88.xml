@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InheritanceRelation class="oracle.dbtools.crest.model.design.logical.InheritanceRelation" name="Hierarchy_2" directorySegmentName="seg_0" id="0EC78D53-DE42-160C-9477-DA173A242E88">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 02:29:36 UTC</createdTime>
+<ownerDesignName>Tarbajo_fundacion2</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>Super Type</nameOnSource>
+<nameOnTarget>Sub Type</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceEntity>A7961D02-B61A-C26A-169C-983A185875E0</sourceEntity>
+<targetEntity>C36B314C-B8E5-F91A-4649-0E370B8FABF9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</InheritanceRelation>

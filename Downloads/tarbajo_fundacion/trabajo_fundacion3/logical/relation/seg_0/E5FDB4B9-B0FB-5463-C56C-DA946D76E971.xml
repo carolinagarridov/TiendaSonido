@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ocupa" directorySegmentName="seg_0" id="E5FDB4B9-B0FB-5463-C56C-DA946D76E971">
+<createdBy>Tokyotech</createdBy>
+<createdTime>2025-09-08 13:27:16 UTC</createdTime>
+<ownerDesignName>trabajo_fundacion3</ownerDesignName>
+<engineerTo>
+<item key="887DD463-A2A3-D120-B842-9DE177667792" value="true"/>
+</engineerTo>
+<sourcePk>5A29C297-1C2F-B7A7-CF6D-A47A80732852</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C36B314C-B8E5-F91A-4649-0E370B8FABF9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FA2CA3A3-3683-5201-2B88-A264DF763FF2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
