@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#283593"/><stop offset="1" stop-color="#1e1e1e"/></linearGradient></defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <g transform="translate(160,70)" fill="#ffffff" opacity="0.9"><path d="M30 0 L80 -12 L80 62 A14 11 0 1 1 72 52 L72 4 L38 12 L38 72 A14 11 0 1 1 30 62 Z"/></g>
+  <text x="200" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Estudio y Grabación</text>
+  <text x="200" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ff9900">Sonido Vivo</text>
+</svg>

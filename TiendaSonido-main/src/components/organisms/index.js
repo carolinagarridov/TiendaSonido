@@ -1,0 +1,8 @@
+export { default as AdminPedidos } from './AdminPedidos/AdminPedidos'
+export { default as AdminProductos } from './AdminProductos/AdminProductos'
+export { default as AdminUsuarios } from './AdminUsuarios/AdminUsuarios'
+export { default as BarraNavegacion } from './BarraNavegacion/BarraNavegacion'
+export { default as GrillaProductos } from './GrillaProductos/GrillaProductos'
+export { default as ListaCarrito } from './ListaCarrito/ListaCarrito'
+export { default as PiePagina } from './PiePagina/PiePagina'
+export { default as ResumenPedido } from './ResumenPedido/ResumenPedido'

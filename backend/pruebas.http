@@ -1,0 +1,56 @@
+@base = http://localhost:3000/api/v1
+
+### 1. Listar todos los productos -> 200
+GET {{base}}/productos
+
+### 2. Filtrar por categoría válida -> 200
+GET {{base}}/productos?categoria=Guitarras%20El%C3%A9ctricas
+
+### 3. Filtrar por categoría inválida -> 422
+GET {{base}}/productos?categoria=Inexistente
+
+### 4. Obtener producto por ID -> 200
+GET {{base}}/productos/1
+
+### 5. Producto inexistente -> 404
+GET {{base}}/productos/999
+
+### 6. Crear producto válido -> 201
+POST {{base}}/productos
+Content-Type: application/json
+
+{
+  "codigo": "TEC-001",
+  "nombre": "Sintetizador Analógico",
+  "categoria": "Teclados y Pianos",
+  "marca": "Korg",
+  "modelo": "Minilogue XD",
+  "precio": 629990,
+  "stock": 3,
+  "descripcion": "Sintetizador polifónico de 4 voces."
+}
+
+### 7. Crear sin nombre -> 422
+POST {{base}}/productos
+Content-Type: application/json
+
+{
+  "categoria": "Audio y Sonido",
+  "precio": 50000
+}
+
+### 8. Actualizar producto -> 200
+PUT {{base}}/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Guitarra Acústica Dreadnought Pro",
+  "categoria": "Guitarras Acústicas",
+  "marca": "Yamaha",
+  "modelo": "F310P",
+  "precio": 199990,
+  "stock": 6
+}
+
+### 9. Eliminar producto -> 204
+DELETE {{base}}/productos/2
