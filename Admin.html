@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador - Sonido Vivo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Administración Sonido Vivo</h1>
+        <a href="index.html" style="color:#fff;">Volver a la Tienda</a>
+    </header>
+
+    <main>
+        <h2>Gestión de Productos</h2>
+        <table border="1" cellpadding="8" style="width:100%; border-collapse:collapse; background:#fff; margin-top:15px;">
+            <thead>
+                <tr style="background:#eee;">
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-admin-productos"></tbody>
+        </table>
+    </main>
+
+    <script src="JSTienda.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tbody = document.getElementById("tabla-admin-productos");
+            const productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+            productos.forEach(p => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${p.codigo}</td>
+                        <td>${p.nombre}</td>
+                        <td>${p.categoria}</td>
+                        <td>$${p.precio.toLocaleString('es-CL')}</td>
+                        <td>${p.stock}</td>
+                    </tr>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

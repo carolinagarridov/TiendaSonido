@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Sonido Vivo</title>
+    <link rel="stylesheet" href="CSSTienda.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Sonido Vivo</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="TiendaSonido.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="Carrito.html">Carrito (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <form id="form-login" onsubmit="iniciarSesion(event)">
+                <div class="form-group">
+                    <label for="loginCorreo">Correo Electrónico:</label>
+                    <input type="email" id="loginCorreo" placeholder="ejemplo@duoc.cl" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginClave">Contraseña:</label>
+                    <input type="password" id="loginClave" required>
+                </div>
+                <button type="submit" class="btn-primary">Ingresar</button>
+            </form>
+            <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </div>
+    </main>
+
+    <script src="JSTienda.js"></script>
+</body>
+</html>
